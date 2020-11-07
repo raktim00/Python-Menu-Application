@@ -1,4 +1,5 @@
 from hadoop_slave import hadoop_slave
+from hadoop_master import hadoop_master
 import os
 
 def hadoop():
@@ -16,8 +17,11 @@ def hadoop():
 		Press 6: To exit
 		""")
 		ch=input("Enter your choice: ")
+
 		if int(ch) == 2:
 				hadoop_slave()
+		elif int(ch)== 1:
+				hadoop_master()
 		elif int(ch) == 4:
 				os.system("hadoop dfsadmin -report")
 		elif int(ch) == 5:
