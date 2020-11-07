@@ -126,23 +126,4 @@ def hadoop():
 		else:
 			print("\n Wrong input")
 		input("\nEnter to continue...")
-
-
-hadoop()
-
-
-
-
-
-
-
-
-
-
-		 
-
-
-
-		
-		
-			
+	
