@@ -54,8 +54,6 @@ def docker_container():
             print("\nWrong Inpur !!!")
         input("\nEnter to continue...")
 
-
-
 def docker():
     while True:
         os.system("clear")
