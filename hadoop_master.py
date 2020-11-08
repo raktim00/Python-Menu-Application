@@ -6,18 +6,18 @@ import getpass
 def master_local():
 	while True:
 		os.system("tput setaf 3")
-		print("Press the respective key to run the commands:\n")
+		print("CHOOSE FROM THE BELOW KEYS :\n")
 		print("""
 		\n
-		Press 1: To configure the hadoop Master Node
-		Press 2: To start the Master node service
-		Press 3: To check the Master node service
-		Press 4: To stop the Master node service
-		Press 5: To go to Menu again
-		Press 6: To Exit 
+		Press 1 : CONFIGURE HADOOP MASTER NODE
+		Press 2 : START MASTER NODE SERVICE
+		Press 3 : CHECK STATUS OF MASTER NODE
+		Press 4 : STOP MASTER NODE SERVICE
+		Press 5 : PREVIOUS MENU
+		Press 6 : EXIT
 		\n""")
 		os.system("tput setaf 7")
-		choice = int(input("Enter Choice:"))
+		choice = int(input("ENTER CHOICE : "))
 		dirlist1=dirlist2=[]
 		if choice==1:		
 			os.system("tput setaf 3")	
@@ -70,31 +70,32 @@ def master_local():
 			return 0
 		elif choice==6:
 			exit()
-#-----------------------------------------------------------------------------------
-#-----------------------------------------------------------------------------------
-#-----------------------------------------------------------------------------------
+		os.system("tput setaf 7")
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------
 
 def master_remote():
 	while True:
 		os.system("clear")
 		os.system("tput setaf 3")
-		print("Hadoop Master Node Configuration\nPress the respective key to run the commands:\n")
+		print("CHOOSE FROM THE BELOW KEYS :\n")
 		print("""
-		Press 1: To configure the hadoop Master Node
-		Press 2: To start the Master node service
-		Press 3: To check the Master node service
-		Press 4: To stop the Master node service
-		Press 5: To go to Menu again
-		Press 6: To Exit\n 
+		Press 1 : CONFIGURE HADOOP MASTER NODE
+		Press 2 : START MASTER NODE SERVICE
+		Press 3 : CHECK STATUS OF MASTER NODE
+		Press 4 : STOP MASTER NODE SERVICE
+		Press 5 : PREVIOUS MENU
+		Press 6 : EXIT\n 
 		""")
 		os.system("tput setaf 7")
-		choice = int(input("Enter Choice:"))
+		choice = int(input("ENTER CHOICE : "))
 
 		if choice==1:
 			r_ip=input("ENTER IP OF REMOTE SYSTEM WHICH YOU WANT TO USE AS MASTER: ")
 			r_pwd=getpass.getpass("YOU WOULD HAVE TO ENTER THE PASSWORD TWICE....\n root@{}'s password : ".format(r_ip))
-			os.system("scp /root/ hadoop-1.2.1-1.x86_64.rpm {}:/root/".format(r_ip))
-			os.system("sshpass -p {} scp /root/ jdk-8u171-linux-x64.rpm {}:/root/".format(r_pwd,r_ip))
+			os.system("scp /root/hadoop-1.2.1-1.x86_64.rpm {}:/root/".format(r_ip))
+			os.system("sshpass -p {} scp /root/jdk-8u171-linux-x64.rpm {}:/root/".format(r_pwd,r_ip))
 			os.system("sshpass -p {} ssh {} rpm -ivh jdk-8u171-linux-x64.rpm".format(r_pwd,r_ip))
 			os.system("sshpass -p {} ssh {} rpm -ivh hadoop-1.2.1-1.x86_64.rpm --force ".format(r_pwd,r_ip))
 			os.system("tput setaf 3")	
@@ -149,15 +150,16 @@ def master_remote():
 			return 0
 		elif choice==6:
 			exit()
-			#-----------------------------------------------------------------------------------
-#-----------------------------------------------------------------------------------
-#-----------------------------------------------------------------------------------
+		os.system("tput setaf 7")
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------
 
 def hadoop_master():
 	while True:
 		os.system("clear")
 		os.system("tput setaf 3")
-		print("Hadoop Master Node Configuration\nHOW WOULD YOU LIKE TO CONFIGURE HADOOP MASTER\n")
+		print("HADOOP MASTER NODE\nHOW WOULD YOU LIKE TO CONFIGURE HADOOP MASTER\n")
 		print("""PRESS 1 : FOR LOCAL SYSTEM \nPRESS 2 : FOR REMOTE SYSTEM\nPRESS 3: TO RETURN TO PREVIOUS MENU\nPRESS 4: TO EXIT\n
 		""")
 		os.system("tput setaf 7")
@@ -173,12 +175,13 @@ def hadoop_master():
 		else:
 			os.system("tput setaf 1")
 			print("INVALID OPTION ....")
-			os.system("tput setaf 7")			
-hadoop_master()
+			os.system("tput setaf 7")
+		os.system("tput setaf 7")			
 
-#-----------------------------------------------------------------------------------
-#-----------------------------------------------------------------------------------
-#-----------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
